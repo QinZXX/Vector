@@ -53,17 +53,17 @@ int main(){
     V5.traverse(visit);
     cout<<"*****************************************************"<<endl;
 
-//    auto V6=V2;
-//    cout<<V6.search(V6[5])<<endl;
-//    V6.traverse(visit);
-//    for(int i=0;i<5;i++) {
-//        int rNum = getRandNum(0, 50);
-//        V6.insert(V6.search(rNum + 1), rNum);
-//    }
-//    V6.traverse(visit);
-//    V6.uniquify();
-//    V5.traverse(visit);
-//    cout<<"*****************************************************"<<endl;
+    auto V6=V2;
+    cout<<V6.search(V6[5])<<endl;
+    V6.traverse(visit);
+    for(int i=0;i<5;i++) {
+        int rNum = getRandNum(0, 50);
+        V6.insert(V6.search(rNum) + 1, rNum);
+    }
+    V6.traverse(visit);
+    V6.uniquify();
+    V5.traverse(visit);
+    cout<<"*****************************************************"<<endl;
 
 
 

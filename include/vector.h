@@ -25,7 +25,7 @@ protected:
     Rank partition ( Rank lo, Rank hi ); //轴点构造算法 (vector_partition.h)
     void quickSort ( Rank lo, Rank hi ); //快速排序算法 (vector_quickSort.h)
     void shellSort ( Rank lo, Rank hi ); //希尔排序算法 (vector_shellSort.h)
-    Rank Vector<T>::binSearch(const T& e,Rank lo,Rank hi); // (vector_search_binary.h)
+    Rank Vector<T>::binSearch(const T& e,Rank lo,Rank hi) const ; // (vector_search_binary.h)
 public:
 
     // Constructor
