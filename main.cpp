@@ -65,6 +65,24 @@ int main(){
     V5.traverse(visit);
     cout<<"*****************************************************"<<endl;
 
+    cout<<"initializer_list constructor"<<endl;
+    Vector<int> a({8,5,90,32,67,85});
+    a.traverse(visit);
+    cout<<"*****************************************************"<<endl;
+    Vector<int> b{8,5,90,32,67,85};
+    b.traverse(visit);
+    cout<<"*****************************************************"<<endl;
+    Vector<int> c={8,5,90,32,67,85}; //并未调用拷贝构造函数（因为有优化？？）
+    //在编译选项中添加 -fno-elide-constructors
+    //CMAKELISTS文件中添加编译选项：
+    //1）add_compile_options(-fno-elide-constructors)    #关闭编译器优化
+    // or
+    //2）set(CMAKE_CXX_FLAGS "-fno-elide-constructors ${CMAKE_CXX_FLAGS}")
+    // 仍未调用
+    c.traverse(visit);
+    cout<<"*****************************************************"<<endl;
+
+
 
 
     return 0;

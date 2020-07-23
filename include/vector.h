@@ -6,6 +6,7 @@
 #ifndef VECTOR_VECTOR_H
 #define VECTOR_VECTOR_H
 
+#include<initializer_list>
 #include "util.h"
 typedef int Rank; //秩
 #define DEFAULT_CAPACITY  3 //默认的初始容量
@@ -34,13 +35,21 @@ public:
         for ( _size = 0; _size < s; _elem[_size++] = v );
     } //s<=c
     Vector ( T const* A, Rank n ) { //数组整体复制
-        copyFrom ( A, 0, n ); }
+        copyFrom ( A, 0, n );
+    }
     Vector ( T const* A, Rank lo, Rank hi ) { //区间
-        copyFrom ( A, lo, hi ); }
+        copyFrom ( A, lo, hi );
+    }
     Vector ( Vector<T> const& V ) { //向量整体复制
-        copyFrom ( V._elem, 0, V._size ); }
+        #ifdef TEST
+        cout<<"use copy constructor!!!"<<endl;
+        #endif
+        copyFrom ( V._elem, 0, V._size );
+    }
     Vector ( Vector<T> const& V, Rank lo, Rank hi ) { //区间
-        copyFrom ( V._elem, lo, hi ); }
+        copyFrom ( V._elem, lo, hi );
+    }
+    Vector(std::initializer_list<T> l); // 列表初始化
 
     // Destructor
     ~Vector() { delete [] _elem; } //释放内部空间

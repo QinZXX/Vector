@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 11)
 
 include_directories(include)
 
+add_compile_options(-fno-elide-constructors)
+
 add_executable(Vector main.cpp QRandom.cpp)
