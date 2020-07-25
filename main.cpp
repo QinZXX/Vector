@@ -11,7 +11,7 @@ void visit(T &e){
 }
 
 int main(){
-    srand ( ( unsigned int ) time ( NULL ) ); //设置随机种子
+    //srand ( ( unsigned int ) time ( NULL ) );
 
     Vector<int> V;
     for(int i=0;i<10;i++){
